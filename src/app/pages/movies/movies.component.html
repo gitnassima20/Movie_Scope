@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-12">
+        <form class="d-flex mx-5 my-4">
+            <input 
+            [ngModelOptions]="{standalone: true}" 
+            [(ngModel)]="query" class="form-control me-sm-2" 
+            (change)="searchMovie()" 
+            type="search" 
+            placeholder="Search a movie"> 
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 col-lg-2 col-sm-4" *ngFor="let popular of upPopularMovies">
+        <app-card [item]="popular"></app-card>
+    </div>
+    
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p-paginator 
+        (onPageChange)="paginate($event)" 
+         [rows]="20" 
+         [totalRecords]="754594" ></p-paginator>
+    </div>
+</div>

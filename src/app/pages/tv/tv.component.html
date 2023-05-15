@@ -1,0 +1,29 @@
+<div class="row ">
+    <div class="col-md-3 col-lg-2 col-sm-4" *ngFor="let tv of tvs">
+        <div class="card mt-3" >
+            <p-image
+             class="card-image"
+             width="100%;"
+             height="auto;" 
+             [routerLink]="['/tv',tv.id]" [src]="resolveImage(tv.poster_path)" [alt]="tv.poster_path" [preview]="true"></p-image>
+            <div class="card-body" style="height: 115px;">
+            <h6 class="card-title">{{tv.original_name}}</h6> 
+            <p> 
+                <p-rating 
+                  [(ngModel)]="tv.vote_average"
+                  [readonly]="true" 
+                  [cancel]="false">
+               </p-rating>
+            </div>
+       </div>
+     
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p-paginator 
+        (onPageChange)="paginate($event)" 
+         [rows]="20" 
+         [totalRecords]="752594" ></p-paginator>
+    </div>
+</div>

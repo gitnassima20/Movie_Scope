@@ -1,0 +1,28 @@
+<p-button (click)="sidebarVisible = true" icon="pi pi-arrow-right"></p-button>
+    <p-sidebar [(visible)]="sidebarVisible">
+        <table>
+            <tr>
+                <h5><i>Movie:</i></h5>
+                <td  class="form-check" *ngFor="let moviecat of movieCategory">
+                    <input 
+                       class="form-check-input"  
+                       type="checkbox"
+                       >
+                       
+                    <label class="form-check-label">{{ moviecat.name}}</label>
+                </td>
+                <hr>
+                <h5><i>Tv</i></h5>
+                <td class="form-check" *ngFor="let tvcat of tvCategory">
+                    <input 
+                      class="form-check-input" 
+                      type="checkbox"
+                       >
+                    <label class="form-check-label">{{tvcat.name}}</label>
+                </td>
+            </tr>
+        </table>
+    </p-sidebar>
+    
+
+

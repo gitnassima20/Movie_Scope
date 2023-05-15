@@ -1,0 +1,8 @@
+<div class="row my-2">
+    <app-sidebar (selectedGenres)="onSelectedGenres($event)" (closeSidebar)="onCloseSidebar()"></app-sidebar>
+    <div class="col-md-3 col-lg-2 col-sm-4" *ngFor="let trend of trending">
+        <app-card 
+            [item]="trend"
+            ></app-card>
+    </div>
+</div>

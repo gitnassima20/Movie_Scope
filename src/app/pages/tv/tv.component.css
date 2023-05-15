@@ -1,0 +1,52 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #E6E6FA;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.9)!important;
+    overflow: hidden;
+    width: 200px;
+    height: 400px;
+    margin: 0px;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: parallaxScrollAndFadeIn 1s ease-in-out forwards;
+    animation-delay: 0.2s;
+}
+  
+.card-background {
+    opacity: 0.5;
+    z-index: 0;
+  }
+  
+@keyframes parallaxScrollAndFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+  
+@keyframes parallaxScroll {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(0, -50%, 0);
+    }
+}
+.card-title{
+   color: #191970;
+}
+
+.image{
+    transform: translate3d(0, 0, 0);
+   animation: parallaxScroll 5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+}
+  
